@@ -1,4 +1,4 @@
-# ⚒️ Algorithm Forge Ultra
+# ⚒️ Algorithm DSA VISUALIZER Forge Ultra
 
 **Explore algorithms by watching them work.** Algorithm Forge Ultra is an interactive, browser-based lab for the existing DSA catalogue, pathfinding, AI/ML demos, and AI-reasoning demos. Inspect step-by-step traces, change inputs, and rewind execution states—all without a backend or build step.
 
