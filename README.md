@@ -1,110 +1,61 @@
-# 🚀 Algorithm Forge Ultra
+# ⚒️ Algorithm Forge Ultra
 
-Visualize Algorithms. Understand Logic. Master Computer Science.
+**Explore algorithms by watching them work.** Algorithm Forge Ultra is an interactive, browser-based lab for the existing DSA catalogue, pathfinding, AI/ML demos, and AI-reasoning demos. Inspect step-by-step traces, change inputs, and rewind execution states—all without a backend or build step.
 
-Algorithm Forge Ultra is an interactive algorithm visualization platform designed to make computer science concepts easier to explore, understand, and experiment with. It brings algorithms to life through visual demonstrations, step-by-step execution, and interactive controls.
+> **Project goal:** make algorithm behavior easier to see, test, and understand. This repository preserves the existing catalogue; it does not add algorithms beyond the project scope.
 
-Instead of simply reading about how an algorithm works, you can explore its behavior, follow its execution, and develop a deeper understanding of the logic behind it.
+![Algorithm Forge Ultra preview](assets/preview.png)
 
-«💡 Our mission is to make algorithm learning more visual, interactive, accessible, and enjoyable for everyone.»
+## ✨ Features
 
----
+- **DSA Atlas** — browse the existing catalogue of 104 DSA demos.
+- **Pathfinding** — explore the 8 existing pathfinding algorithms.
+- **AI / ML** — interact with 9 existing demonstrations.
+- **AI Reasoning** — step through 8 existing reasoning demonstrations.
+- **Step-by-step playback** — run, pause, step, scrub, and reset traces.
+- **Editable inputs** — experiment with supported values and targets.
+- **Responsive interface** — use the lab on desktop or mobile-sized screens.
+- **No build tools or backend** — plain HTML, CSS, and JavaScript; host it as a static site.
 
-✨ Features
+**Catalogue count:** 129 demos total (104 DSA + 8 pathfinding + 9 AI/ML + 8 reasoning).
 
-- 🎨 Interactive Visualizations — Explore algorithm behavior through visual representations.
-- ⏯️ Step-by-Step Execution — Move through algorithm operations and understand how each step works.
-- ▶️ Playback Controls — Run, pause, step through, scrub, and reset supported visualizations.
-- 🧩 Data Structures & Algorithms — Explore existing sorting, searching, graph, and data-structure demonstrations.
-- 🗺️ Pathfinding — Visualize how supported algorithms navigate graphs and search for paths.
-- 🧮 Dynamic Programming — Explore supported problem-solving demonstrations.
-- 🤖 AI & Machine Learning Concepts — Experiment with the included AI/ML demonstrations.
-- 🧠 AI Reasoning — Explore the included reasoning demonstrations interactively.
-- 📱 Responsive Interface — Designed to work across desktop and mobile-sized screens.
-- 🌐 Open Source — Explore the code, report issues, and contribute improvements.
+## 🚀 Run locally
 
-🧭 Explore the Platform
+1. Download or clone this repository.
+2. Open `index.html` in a modern browser.
+3. Select a demo and use **Step**, **Run**, **Pause**, **Scrub**, and **Reset** to explore it.
 
-Algorithm Forge Ultra brings together several areas of computer science in one interactive environment.
+No npm install, API key, or server is required for the normal static-site build. If your browser restricts local files, serve the folder with any static HTTP server.
 
-1. Sorting and Searching
+## 🌐 Publish with GitHub Pages
 
-Understand how algorithms process collections of values, compare elements, and locate targets.
+This repository includes a GitHub Actions workflow at `.github/workflows/pages.yml`.
 
-Explore the available demonstrations to see how the state changes as an algorithm executes.
+1. Create a GitHub repository named `algorithm-forge-ultra` (or choose your own name).
+2. Upload/push the **contents** of this project folder to the repository root. `index.html`, `css/`, and `js/` should be at the root level—not nested in another project folder.
+3. In GitHub, open **Settings → Pages** and set the build/deployment source to **GitHub Actions**.
+4. Open the **Actions** tab and wait for the Pages workflow to finish successfully.
+5. Your site URL will be shown in the Pages deployment details and under **Settings → Pages**.
 
-2. Data Structures
+Every push to `main` triggers a deployment. If your default branch is named differently, update the branch filter in `.github/workflows/pages.yml`.
 
-Investigate the existing data-structure demonstrations and observe how operations affect their contents and organization.
+## 🧪 Browser self-test
 
-3. Graphs and Pathfinding
+Open `index.html#autotest` in a browser. The built-in test harness displays a JSON report and checks catalogue coverage, algorithm outcomes/invariants, representative visualization states, and interactions.
 
-Explore graph-based problems and supported pathfinding algorithms through visual execution.
+### Recorded verification
 
-4. Dynamic Programming
+The supplied repair build was tested in Chromium 144 on 12 October 2026:
 
-Study the included dynamic-programming demonstrations and observe how intermediate states contribute to solving a problem.
+- **1,414/1,414** automated browser assertions passed across the 129 demos.
+- **20/20** additional interaction checks passed.
+- No JavaScript page errors or browser-console errors were observed in those runs.
 
-5. AI and Machine Learning
+See [`BROWSER_TEST_REPORT.md`](BROWSER_TEST_REPORT.md) for the recorded test details. These results describe that test environment; they are not a guarantee that every browser engine/device has been independently tested. Please run the self-test and manually check your target devices before relying on a deployment.
 
-Experiment with the platform's included AI/ML concepts through interactive demonstrations.
+## 🗂️ Repository structure
 
-6. AI Reasoning
-
-Explore the available reasoning demonstrations to better understand their execution flow and intermediate steps.
-
-The exact controls and visual details vary by demonstration.
-
----
-
-🎮 How to Use
-
-1. Open Algorithm Forge Ultra in your browser.
-2. Browse the available categories and select a demonstration.
-3. Configure the available inputs or values.
-4. Start the visualization.
-5. Use the playback controls to inspect the execution.
-6. Reset and experiment with different inputs where supported.
-7. Compare how the behavior changes and build your understanding.
-
-Learning tip: Predict what the algorithm will do before advancing to the next step. Then compare your prediction with the visualization.
-
----
-
-🛠️ Built With
-
-- HTML5 — Page structure and content.
-- CSS3 — Styling, layout, and responsive presentation.
-- JavaScript — Interactive controls, algorithm logic, and visualization behavior.
-
-The project is designed as a browser-based application, keeping the core experience accessible without requiring a complex development environment.
-
----
-
-💻 Run Locally
-
-Option 1: Open the HTML file
-
-If you are using the standalone HTML version:
-
-1. Download the HTML file.
-2. Open it in a modern browser.
-3. Start exploring the available demonstrations.
-
-Option 2: Run the repository
-
-Clone the repository:
-
-git clone https://github.com/voyager67/algorithm-forge-ultra.git
-
-Enter the project directory:
-
-cd algorithm-forge-ultra
-
-Open "index.html" in your browser.
-
-If you are using the split project structure, the main files are organized as follows:
-
+```text
 algorithm-forge-ultra/
 ├── index.html
 ├── css/
@@ -112,131 +63,24 @@ algorithm-forge-ultra/
 ├── js/
 │   └── app.js
 ├── assets/
+│   └── preview.png
 ├── .github/
-├── README.md
-├── LICENSE
+│   └── workflows/
+│       └── pages.yml
+├── BROWSER_TEST_REPORT.md
 ├── CONTRIBUTING.md
-└── .gitignore
+├── LICENSE
+└── README.md
+```
 
-This structure describes the prepared split project. Keep the files and paths consistent when uploading the project to GitHub.
+## 🤝 Contributing
 
----
+Bug reports, reproducible test cases, accessibility improvements, and focused fixes are welcome. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening an issue or pull request.
 
-🌍 Deployment
+## ⭐ Support the project
 
-Algorithm Forge Ultra can be hosted as a static website using GitHub Pages.
+If this project is useful, **star the repository on GitHub** and share the live demo with students, educators, and developers who may find it helpful. Stars are voluntary; do not use bots, paid/fake engagement, or spam to obtain them.
 
-1. Upload the project files to your GitHub repository.
-2. Open Settings → Pages.
-3. Configure the deployment source according to the repository's GitHub Actions workflow.
-4. Open the Actions tab and wait for deployment to complete.
-5. Visit the published URL and test the website.
+## 📄 License
 
-Check the deployment logs if the website does not load correctly.
-
----
-
-🧪 Testing
-
-The project has been tested in Chromium using automated checks and interactive browser tests.
-
-The recorded test run covered the existing demonstrations and common UI interactions, including playback controls, input changes, data-structure operations, pathfinding, AI/ML interactions, reasoning steps, and mobile-sized navigation.
-
-See "BROWSER_TEST_REPORT.md" for the recorded results, if included in the repository.
-
-Browser behavior can vary by device and browser engine. Contributions that improve compatibility, accessibility, and reliability are welcome.
-
----
-
-🎯 Project Goals
-
-Algorithm Forge Ultra aims to:
-
-- Make complex concepts easier to understand visually.
-- Encourage hands-on experimentation rather than passive reading.
-- Help learners connect algorithm theory with execution.
-- Provide an accessible starting point for exploring computer science.
-- Support community-driven improvements to educational software.
-
----
-
-🤝 Contributing
-
-Contributions, bug reports, suggestions, and feedback are welcome.
-
-You can contribute by:
-
-- Reporting reproducible bugs.
-- Improving existing visualizations.
-- Fixing incorrect algorithm behavior.
-- Improving mobile usability and accessibility.
-- Enhancing documentation and learning explanations.
-- Improving code quality, performance, and browser compatibility.
-
-Contribution workflow
-
-1. Fork the repository.
-2. Create a branch for your change.
-3. Make and test your improvements.
-4. Commit your changes with a clear message.
-5. Open a pull request describing the change and how you tested it.
-
-Please review "CONTRIBUTING.md" if it is present.
-
-Important: Improvements should preserve the project's existing scope unless a new feature is explicitly proposed and accepted.
-
----
-
-🐛 Bug Reports and Feedback
-
-Found a problem? Please open a GitHub issue and include:
-
-- The browser and device you used.
-- The demonstration where the problem occurred.
-- The steps needed to reproduce it.
-- What you expected to happen.
-- What actually happened.
-- A screenshot or console error, if available.
-
-Clear bug reports make it easier to reproduce problems and improve the project.
-
----
-
-📜 License
-
-This project is intended to use the MIT License.
-
-Refer to the repository's "LICENSE" file for the applicable terms.
-
----
-
-⭐ Support the Project
-
-If Algorithm Forge Ultra helps you learn, teach, or explore algorithms:
-
-- ⭐ Star the repository on GitHub.
-- 🔁 Share it with fellow students and developers.
-- 🐛 Report bugs and suggest improvements.
-- 🤝 Contribute fixes, documentation, and enhancements.
-
-Every genuine contribution and piece of feedback helps the project improve.
-
----
-
-👨‍💻 Author
-
-GitHub: "@voyager67" (https://github.com/voyager67)
-
-Project: Algorithm Forge Ultra
-
----
-
-🚀 Learn. Visualize. Experiment. Build.
-
-Algorithm Forge Ultra is built around one simple idea:
-
-Understanding an algorithm becomes easier when you can see how it works.
-
-Explore the demonstrations, experiment with the available controls, and help make computer science more approachable for everyone.
-
-If you find this project useful, consider giving it a ⭐ on GitHub!
+Released under the MIT License. See [`LICENSE`](LICENSE).
